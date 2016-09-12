@@ -30,6 +30,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <arpa/inet.h>
+
+#if defined(__APPLE__)
+#include <libkern/OSByteOrder.h>
+#define bswap_32 OSSwapInt32
+#define bswap_16 OSSwapInt16
+#else
 #include <byteswap.h>
+#endif
 
 #endif

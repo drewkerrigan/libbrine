@@ -3,7 +3,7 @@ OBJ := $(SRC:.c=.o)
 TESTS := keypair_test serialize_test
 
 SHARED_CFLAGS = -std=gnu99 -fPIC -O3 -march=opteron -Iinclude
-LIB_CFLAGS := $(SHARED_CFLAGS) -Isrc/ed25519 -Isrc/blake2 -Wall -Werror
+LIB_CFLAGS := $(SHARED_CFLAGS) -Isrc/ed25519 -Isrc/blake2 -Wall -Werror -Wno-unused-function -Wno-unused-const-variable
 TEST_CFLAGS := $(SHARED_CFLAGS) -Itests -Wno-unused-but-set-variable -Wno-unused-variable
 
 all: libbrine_s.a libbrine.so
